@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 const config = require('../config');
 
-mongoose.connect(config.mongoUri).catch(() => {
-    console.error('MongoDB connection failed. Check MONGODB_URI.');
-});
+mongoose.connect(config.mongoUri)
+    .then(() => {
+        console.log('MongoDB connected successfully.');
+    })
+    .catch((error) => {
+        console.error('MongoDB connection failed:', error.message);
+    });
 
 const AdminSchema = new mongoose.Schema({
     username: {
