@@ -34,6 +34,9 @@ app.use(cookieParser());
 app.use("/auth", authRouter);
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/admin", adminRouter);
+app.use("/api/user", userRouter);
 
 app.use((req, res) => {
     return res.status(404).json({ msg: 'Not found' });
@@ -62,6 +65,10 @@ app.use((error, req, res, next) => {
     return res.status(500).json({ msg: 'Internal server error' });
 });
 
-app.listen(config.port, () => {
-    console.log(`Server is running on port ${config.port}`);
-});
+if (require.main === module) {
+    app.listen(config.port, () => {
+        console.log(`Server is running on port ${config.port}`);
+    });
+}
+
+module.exports = app;
