@@ -1,0 +1,35 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  display: block;
+  border: 2.5px solid rgba(79, 70, 229, 0.16);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+.sm {
+  width: 18px;
+  height: 18px;
+}
+
+.md {
+  width: 26px;
+  height: 26px;
+}
+
+.lg {
+  width: 38px;
+  height: 38px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

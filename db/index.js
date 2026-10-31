@@ -1,20 +1,32 @@
 const mongoose = require('mongoose');
+const config = require('../config');
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://Harshi_135:Harshi_13521@cluster0.wuimjf8.mongodb.net/course_selling_app');
-    
-     
-// Define schemas
+mongoose.connect(config.mongoUri).catch(() => {
+    console.error('MongoDB connection failed. Check MONGODB_URI.');
+});
+
 const AdminSchema = new mongoose.Schema({
-    // Schema definition here
-    username: String,
-    password: String
+    username: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
 });
 
 const UserSchema = new mongoose.Schema({
-    // Schema definition here
-    username: String,
-    password: String,
+    username: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
     purchasedCourses: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Course'
@@ -22,7 +34,6 @@ const UserSchema = new mongoose.Schema({
 });
 
 const CourseSchema = new mongoose.Schema({
-    // Schema definition here
     title: String,
     description: String,
     imageLink: String,
@@ -37,4 +48,4 @@ module.exports = {
     Admin,
     User,
     Course
-}
+};

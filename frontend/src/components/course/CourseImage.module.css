@@ -1,0 +1,67 @@
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-primary-soft);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 20px;
+  color: #fff;
+}
+
+.fallback::before,
+.fallback::after {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  content: "";
+}
+
+.fallback::before {
+  top: -48px;
+  right: -36px;
+  width: 180px;
+  height: 180px;
+}
+
+.fallback::after {
+  top: 18px;
+  right: 42px;
+  width: 84px;
+  height: 84px;
+}
+
+.initials {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+}
+
+.caption {
+  position: relative;
+  z-index: 1;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  opacity: 0.82;
+  text-transform: uppercase;
+}

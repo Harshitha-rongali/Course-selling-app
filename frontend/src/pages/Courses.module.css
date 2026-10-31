@@ -1,0 +1,157 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  padding: 62px 0 34px;
+}
+
+.header::after {
+  position: absolute;
+  top: -180px;
+  right: 4%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 164, 0.09), transparent 66%);
+  content: "";
+  pointer-events: none;
+}
+
+.kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-primary-strong);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: -0.05em;
+}
+
+.description {
+  max-width: 56ch;
+  margin-top: 14px;
+  color: var(--color-muted);
+  font-size: 1.02rem;
+}
+
+.body {
+  padding-top: 26px;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+}
+
+.searchField {
+  position: relative;
+  flex: 1;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  color: var(--color-muted);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.searchField input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 16px 10px 44px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.searchField input::placeholder {
+  color: #9aa0b4;
+}
+
+.searchField input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+
+.sortField {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sortField label {
+  flex: 0 0 auto;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.sortField select {
+  min-height: 46px;
+  width: 100%;
+  padding: 8px 34px 8px 12px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.sortField select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+
+.resultMeta {
+  margin: 20px 2px 18px;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 64px 24px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 720px) {
+  .header {
+    padding: 78px 0 38px;
+  }
+
+  .toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .sortField {
+    flex: 0 0 auto;
+  }
+
+  .sortField select {
+    width: auto;
+    min-width: 176px;
+  }
+}

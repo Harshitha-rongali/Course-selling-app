@@ -1,0 +1,22 @@
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.default {
+  box-shadow: var(--shadow-sm);
+}
+
+.elevated {
+  box-shadow: var(--shadow-md);
+}
+
+.soft {
+  background: var(--color-surface-muted);
+}
+
+.plain {
+  border-color: transparent;
+  background: transparent;
+}
